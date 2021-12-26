@@ -100,3 +100,20 @@ Services match a set of Pods using labels and selectors, a grouping primitive th
 - Classify an object using tags
 
   ![image](https://user-images.githubusercontent.com/15108863/147408128-319e4384-28d4-4502-b4b8-54afd2e64867.png)
+
+  
+## Scaling an application
+In the previous modules we created a Deployment, and then exposed it publicly via a Service. The Deployment created only one Pod for running our application. When traffic increases, we will need to scale the application to keep up with user demand.
+
+Scaling is accomplished by changing the number of replicas in a Deployment
+  
+  ![image](https://user-images.githubusercontent.com/15108863/147408260-0a97dc09-2518-43fd-a695-462848e2ec9f.png)
+  ![image](https://user-images.githubusercontent.com/15108863/147408270-2f809b50-25f9-4007-becf-7d9f18e9c844.png)
+  
+ 
+Scaling out a Deployment will ensure new Pods are created and scheduled to Nodes with available resources. Scaling will increase the number of Pods to the new desired state. Kubernetes also supports autoscaling of Pods. Scaling to zero is also possible, and it will terminate all Pods of the specified Deployment.
+
+Running multiple instances of an application will require a way to distribute the traffic to all of them. Services have an integrated load-balancer that will distribute network traffic to all Pods of an exposed Deployment. Services will monitor continuously the running Pods using endpoints, to ensure the traffic is sent only to available Pods.
+
+Scaling is accomplished by changing the number of replicas in a Deployment.
+Once you have multiple instances of an Application running, you would be able to do Rolling updates without downtime.
