@@ -27,3 +27,45 @@ Once the application instances are created, a Kubernetes Deployment Controller c
 In a pre-orchestration world, installation scripts would often be used to start applications, but they did not allow recovery from machine failure. By both creating your application instances and keeping them running across Nodes, Kubernetes Deployments provide a fundamentally different approach to application management.
 
 ![image](https://user-images.githubusercontent.com/15108863/147407919-40bc621c-9ee8-4f44-99c8-ee14d9bc1d23.png)
+
+## Kubernetes Pods
+A Pod is a Kubernetes abstraction that represents a group of one or more application containers (such as Docker), and some shared resources for those containers. Those resources include:
+
+Shared storage, as Volumes
+Networking, as a unique cluster IP address
+Information about how to run each container, such as the container image version or specific ports to use
+A Pod models an application-specific "logical host" and can contain different application containers which are relatively tightly coupled. For example, a Pod might include both the container with your Node.js app as well as a different container that feeds the data to be published by the Node.js webserver. The containers in a Pod share an IP Address and port space, are always co-located and co-scheduled, and run in a shared context on the same Node.
+
+Pods are the atomic unit on the Kubernetes platform. When we create a Deployment on Kubernetes, that Deployment creates Pods with containers inside them (as opposed to creating containers directly). Each Pod is tied to the Node where it is scheduled, and remains there until termination (according to restart policy) or deletion. In case of a Node failure, identical Pods are scheduled on other available Nodes in the cluster.
+
+Summary:
+Pods
+Nodes
+Kubectl main commands
+A Pod is a group of one or more application containers (such as Docker) and includes shared storage (volumes), IP address and information about how to run them.
+
+
+Pods overview
+![image](https://user-images.githubusercontent.com/15108863/147408008-62fd500f-bf4d-47a1-8b47-967c8c39ef96.png)
+
+Nodes
+A Pod always runs on a Node. A Node is a worker machine in Kubernetes and may be either a virtual or a physical machine, depending on the cluster. Each Node is managed by the control plane. A Node can have multiple pods, and the Kubernetes control plane automatically handles scheduling the pods across the Nodes in the cluster. The control plane's automatic scheduling takes into account the available resources on each Node.
+
+Every Kubernetes Node runs at least:
+
+Kubelet, a process responsible for communication between the Kubernetes control plane and the Node; it manages the Pods and the containers running on a machine.
+A container runtime (like Docker) responsible for pulling the container image from a registry, unpacking the container, and running the application.
+Containers should only be scheduled together in a single Pod if they are tightly coupled and need to share resources such as disk.
+
+
+Node overview
+![image](https://user-images.githubusercontent.com/15108863/147408015-96c2ad42-6384-4118-bfb8-f64a2ab29225.png)
+
+Troubleshooting with kubectl
+The most common operations can be done with the following kubectl commands:
+
+kubectl get - list resources
+kubectl describe - show detailed information about a resource
+kubectl logs - print the logs from a container in a pod
+kubectl exec - execute a command on a container in a pod
+You can use these commands to see when applications were deployed, what their current statuses are, where they are running and what their configurations are.
