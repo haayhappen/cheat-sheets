@@ -117,3 +117,24 @@ Running multiple instances of an application will require a way to distribute th
 
 Scaling is accomplished by changing the number of replicas in a Deployment.
 Once you have multiple instances of an Application running, you would be able to do Rolling updates without downtime.
+
+  
+## Updating an application
+Users expect applications to be available all the time and developers are expected to deploy new versions of them several times a day. In Kubernetes this is done with rolling updates. Rolling updates allow Deployments' update to take place with zero downtime by incrementally updating Pods instances with new ones. The new Pods will be scheduled on Nodes with available resources.
+
+Running multiple instances is a requirement for performing updates without affecting application availability. By default, the maximum number of Pods that can be unavailable during the update and the maximum number of new Pods that can be created, is one. Both options can be configured to either numbers or percentages (of Pods). In Kubernetes, updates are versioned and any Deployment update can be reverted to a previous (stable) version.
+  
+  ![image](https://user-images.githubusercontent.com/15108863/147408378-635bb473-65d6-4c75-9995-a374954b12d9.png)
+  ![image](https://user-images.githubusercontent.com/15108863/147408383-ca10d21e-2653-46aa-ba69-bafbe5a57bed.png)
+  ![image](https://user-images.githubusercontent.com/15108863/147408390-a37e722e-58c4-405a-8b92-1d258d514ec0.png)
+  ![image](https://user-images.githubusercontent.com/15108863/147408392-d15ef00f-cc54-45cf-98a5-9cd8501d9183.png)
+
+
+Similar to application Scaling, if a Deployment is exposed publicly, the Service will load-balance the traffic only to available Pods during the update. An available Pod is an instance that is available to the users of the application.
+
+Rolling updates allow the following actions:
+
+- Promote an application from one environment to another (via container image updates)
+- Rollback to previous versions
+- Continuous Integration and Continuous Delivery of applications with zero downtime
+
