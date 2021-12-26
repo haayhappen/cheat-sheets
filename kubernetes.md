@@ -46,7 +46,7 @@ A Pod is a group of one or more application containers (such as Docker) and incl
 
 
 Pods overview
-![image](https://user-images.githubusercontent.com/15108863/147408008-62fd500f-bf4d-47a1-8b47-967c8c39ef96.png)
+![image](https://user-images.githubusercontent.com/15108863/147408193-f3aeb191-14f3-4462-b7bf-d9586774f6dc.png)
 
 Nodes
 A Pod always runs on a Node. A Node is a worker machine in Kubernetes and may be either a virtual or a physical machine, depending on the cluster. Each Node is managed by the control plane. A Node can have multiple pods, and the Kubernetes control plane automatically handles scheduling the pods across the Nodes in the cluster. The control plane's automatic scheduling takes into account the available resources on each Node.
@@ -58,8 +58,8 @@ A container runtime (like Docker) responsible for pulling the container image fr
 Containers should only be scheduled together in a single Pod if they are tightly coupled and need to share resources such as disk.
 
 
-Node overview
-![image](https://user-images.githubusercontent.com/15108863/147408015-96c2ad42-6384-4118-bfb8-f64a2ab29225.png)
+Node overview   
+![image](https://user-images.githubusercontent.com/15108863/147408210-0fb382cb-1535-4cee-9cfc-c3bba109cec0.png)
 
 Troubleshooting with kubectl
 The most common operations can be done with the following kubectl commands:
