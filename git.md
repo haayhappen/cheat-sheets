@@ -41,3 +41,10 @@ Pull remote copy of current branch and merge it directly
 ```git pull```
   
   
+### Specifics
+
+Set author name for all commits in a specific repo    
+  ```git config user.name <name>```
+  
+Edit the global git config in an editor   
+  ```git config --global --edit```
