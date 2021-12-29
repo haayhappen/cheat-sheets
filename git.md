@@ -10,7 +10,7 @@ Clone remote repo
 Commit with a message   
 ```git commit -m "<message>"```
 
-Shows staged, unstaged & untracked changes
+Shows staged, unstaged & untracked changes    
 ```git status```
 
 Display commit history    
