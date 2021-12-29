@@ -7,6 +7,9 @@ Init local repo
 Clone remote repo   
 ```git clone <repo>```
 
+Stage (specific) files    
+```git add <directory>``` or ```git add .``` to add all
+
 Commit with a message   
 ```git commit -m "<message>"```
 
