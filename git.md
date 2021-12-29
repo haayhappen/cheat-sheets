@@ -48,3 +48,12 @@ Set author name for all commits in a specific repo
   
 Edit the global git config in an editor   
   ```git config --global --edit```
+  
+Reset changes (optional with working dir) to the most recent commit   
+```git reset (--hard)```
+  
+Reset to a specific commit    
+  ```git reset (--hard) <commit>```
+  
+Interactive rebase current branch onto <base>   
+  ```git rebase -i <base>```
