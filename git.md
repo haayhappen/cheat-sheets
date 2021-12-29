@@ -34,4 +34,10 @@ Create branch and checkout <branch>
 Merge <branch> into current branch    
 ```git merge <branch>```
   
+Fetch (all) remote refs   
+```git fetch (<remote> <branch>)```
+  
+Pull remote copy of current branch and merge it directly    
+```git pull```
+  
   
