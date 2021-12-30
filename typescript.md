@@ -47,3 +47,5 @@ function toNumber(numberString: string): number {
   return num;
 }
 ```
+
+The primitive types that TypeScript provides match the primitive types of JavaScript itself: any, number, string, boolean. TypeScript also has void (for null or undefined function return values), never, and as of TypeScript 3.0, unknown.
