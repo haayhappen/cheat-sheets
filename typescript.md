@@ -7,7 +7,7 @@ Install
 Run typescript compiler   
 ```npx tsc (--noEmit --watch)```
 
-Example config:
+### Config:
 ```
 {
   "compilerOptions": {
@@ -36,3 +36,14 @@ Example config:
 
 Usually, a tsconfig.js is created within a project to configure the typescript compiler. 
 The lib config property allows specific type subsets to be enabled to tailor the compiler’s output for a particular environment. For example, if a project will be running in a legacy environment that’s known to have a polyfill for  Array.prototype.include, then “es2016.array.include” could be added to the lib property to let the compiler know that this method (but not other ES2016 library methods) will be available. If code will be running in a browser, then “dom” should be added to lib to tell the compiler that global DOM resources will be available.
+
+### Types
+Types are the banner feature of TypeScript. The TS compiler determines a type for every value (variable, function argument, return value, etc.) in a program, and it uses these types for a range of features, from indicating when a function is being called with the wrong input to enabling an IDE to auto-complete a class property name.
+
+Without additional type hints, all variables in TypeScript have the any type, meaning they are allowed to contain any type of data, just like a JavaScript variable. The basic syntax for adding type constraints to code in TypeScript looks like this:
+```ts
+function toNumber(numberString: string): number {
+  const num: number = parseFloat(numberString);
+  return num;
+}
+```
