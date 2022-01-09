@@ -51,3 +51,5 @@ function toNumber(numberString: string): number {
 The primitive types that TypeScript provides match the primitive types of JavaScript itself: any, number, string, boolean. TypeScript also has void (for null or undefined function return values), never, and as of TypeScript 3.0, unknown.
 
 *unknown* is the type-safe counterpart of *any*; anything can be assigned to an *unknown* variable, but an unknown value can’t be assigned to anything other than an *any* variable without a type assertion or type narrowing.
+
+
