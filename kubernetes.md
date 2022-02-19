@@ -124,6 +124,7 @@ Users expect applications to be available all the time and developers are expect
 
 Running multiple instances is a requirement for performing updates without affecting application availability. By default, the maximum number of Pods that can be unavailable during the update and the maximum number of new Pods that can be created, is one. Both options can be configured to either numbers or percentages (of Pods). In Kubernetes, updates are versioned and any Deployment update can be reverted to a previous (stable) version.
   
+  
   ![image](https://user-images.githubusercontent.com/15108863/147408378-635bb473-65d6-4c75-9995-a374954b12d9.png)
   ![image](https://user-images.githubusercontent.com/15108863/147408383-ca10d21e-2653-46aa-ba69-bafbe5a57bed.png)
   ![image](https://user-images.githubusercontent.com/15108863/147408390-a37e722e-58c4-405a-8b92-1d258d514ec0.png)
